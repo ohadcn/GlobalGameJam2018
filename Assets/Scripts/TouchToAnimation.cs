@@ -15,7 +15,7 @@ public class TouchToAnimation : MonoBehaviour {
 	void Update () {
         if ((Input.GetMouseButtonDown(0) || Input.touchCount > 0))
         {
-            GetComponent<Animator>().Play(anim.name, 1);
+            //GetComponent<Animator>().Play(anim.name, 1);
         }
     }
 }
