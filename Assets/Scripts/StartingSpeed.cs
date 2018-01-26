@@ -4,13 +4,17 @@ using UnityEngine;
 
 using static Utils;
 public class StartingSpeed : MonoBehaviour {
-    public bool UseRandom = false;
+    public bool UseRandomSpeed = false;
     public Vector3 Speed = Vector3.zero;
     public Vector3 MaxRandomSpeed = Vector3.one;
 
-	// Use this for initialization
-	void Start () {
-        if (UseRandom)
+    public bool UseRandomPos = true;
+    public Vector3 Pos = Vector3.zero;
+    public Vector3 MaxRandomPos = Vector3.one * 4;
+
+    // Use this for initialization
+    void Start () {
+        if (UseRandomSpeed)
             Speed = new Vector3(Rangify(MaxRandomSpeed.x),
                 Rangify(MaxRandomSpeed.y),
                 Rangify(MaxRandomSpeed.z));
@@ -19,10 +23,16 @@ public class StartingSpeed : MonoBehaviour {
             rigidbody.velocity = Speed;
         else
             Debug.Log("no rigid body" + name);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+        if (UseRandomPos)
+            Speed = new Vector3(Rangify(MaxRandomPos.x),
+                Rangify(MaxRandomPos.y),
+                Rangify(MaxRandomPos.z));
+        transform.position += Speed;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
