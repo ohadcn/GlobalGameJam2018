@@ -23,6 +23,7 @@ public class ChangeLayerOnTouch : MonoBehaviour {
             gameObject.layer = OnTouch;
         }
     }
+
     private void OnCollisionExit(Collision collision)
     {
         gameObject.layer = NoTouch;

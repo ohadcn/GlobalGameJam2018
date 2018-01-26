@@ -1,35 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-    public class PlayerScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour
+{
+    public Fruit fruit;
+    public string[] names = new string[] { "Banana",
+        //"Strawberry",
+        "Straw",
+        "Orange" };
+    // Use this for initialization
+    void Start()
     {
-        public Fruit fruit;
-        // Use this for initialization
-        void Start()
-        {
-            fruit = Fruit.BANANA;
-        }
+        fruit = Fruit.BANANA;
+    }
 
-        // Update is called once per frame
-        void Update()
-        {
+    // Update is called once per frame
+    void Update()
+    {
 
-        }
+    }
 
-        private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
+    {
+        HittersScript s = collision.collider.GetComponent<HittersScript>();
+        if (s != null)
         {
-            HittersScript s = collision.collider.GetComponent<HittersScript>();
-            if(s != null)
+            if (fruit != s.fruit)
             {
-                Debug.Log("collider, player.property");                
-                Debug.Log(s.fruit);
-                Debug.Log(fruit);
-
-
-            if (fruit!= s.fruit)
-                    fruit = (Fruit)(3 -this.fruit - s.fruit);
-            Debug.Log("after collision");
-            Debug.Log(this.fruit);
-        }
+                int prev = (int)fruit;
+                fruit = (Fruit)(3 - this.fruit - s.fruit);
+                //GetComponent<Animator>().Play(names[prev] + "To" + names[(int)fruit]);
+                GetComponent<Animator>().SetTrigger(names[(int)s.fruit] + "HitsMy" + names[prev]);
+            }
         }
     }
+}
