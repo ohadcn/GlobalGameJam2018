@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class PlayerScript : MonoBehaviour
 {
     public Fruit fruit;
@@ -33,5 +35,10 @@ public class PlayerScript : MonoBehaviour
                 GetComponent<Animator>().SetTrigger(names[(int)s.fruit] + "HitsMy" + names[prev]);
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
