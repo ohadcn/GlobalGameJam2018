@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: bananaToOrangeAnim
+  m_Name: IdleOrange
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -18,24 +18,6 @@ AnimationClip:
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
-    - time: 0
-      value: {fileID: 21300000, guid: 1609304bc03b2c24aab0bb030cb99899, type: 3}
-    - time: 0.083333336
-      value: {fileID: 21300000, guid: bf73443fce956db438ddaf83721d7676, type: 3}
-    - time: 0.16666667
-      value: {fileID: 21300000, guid: 503c18ea71e1fd74a87debc1587f1faa, type: 3}
-    - time: 0.25
-      value: {fileID: 21300000, guid: d212a4fcf1be3b34898631da81ebcc20, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300000, guid: ca39e2832ec827648bd9e8e007b8b753, type: 3}
-    - time: 0.41666666
-      value: {fileID: 21300000, guid: a09d40bedba1a7c4eba8cae4e0245080, type: 3}
-    - time: 0.5
-      value: {fileID: 21300000, guid: 76be20df3313cfe44bbfb7137092572f, type: 3}
-    - time: 0.5833333
-      value: {fileID: 21300000, guid: 0948ba3ce941d744aae3b9b3de21e581, type: 3}
-    - time: 0.6666667
-      value: {fileID: 21300000, guid: 69e8e0d20bcc6e44aad566da572bb4a1, type: 3}
     - time: 0.75
       value: {fileID: 21300000, guid: c31636e22a7025b488ba457307c5e629, type: 3}
     attribute: m_Sprite
@@ -57,15 +39,6 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 1609304bc03b2c24aab0bb030cb99899, type: 3}
-    - {fileID: 21300000, guid: bf73443fce956db438ddaf83721d7676, type: 3}
-    - {fileID: 21300000, guid: 503c18ea71e1fd74a87debc1587f1faa, type: 3}
-    - {fileID: 21300000, guid: d212a4fcf1be3b34898631da81ebcc20, type: 3}
-    - {fileID: 21300000, guid: ca39e2832ec827648bd9e8e007b8b753, type: 3}
-    - {fileID: 21300000, guid: a09d40bedba1a7c4eba8cae4e0245080, type: 3}
-    - {fileID: 21300000, guid: 76be20df3313cfe44bbfb7137092572f, type: 3}
-    - {fileID: 21300000, guid: 0948ba3ce941d744aae3b9b3de21e581, type: 3}
-    - {fileID: 21300000, guid: 69e8e0d20bcc6e44aad566da572bb4a1, type: 3}
     - {fileID: 21300000, guid: c31636e22a7025b488ba457307c5e629, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
@@ -77,7 +50,7 @@ AnimationClip:
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
