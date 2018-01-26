@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23150870612988526}
   - component: {fileID: 114453584756414186}
   - component: {fileID: 54692636280619596}
+  - component: {fileID: 114973228000525176}
   m_Layer: 8
   m_Name: Balls
   m_TagString: Untagged
@@ -117,6 +118,18 @@ MonoBehaviour:
   UseRandomPos: 1
   Pos: {x: 0, y: 0, z: 0}
   MaxRandomPos: {x: 3, y: 0, z: 3}
+--- !u!114 &114973228000525176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836849733469748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a80a64c21d877bb41aabb7e81131db49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruit: 0
 --- !u!135 &135203136815372712
 SphereCollider:
   m_ObjectHideFlags: 1
