@@ -36,12 +36,17 @@ public class GameController : MonoBehaviour
     {
         countDown = (int)(Time.realtimeSinceStartup - countDown0);
         seconds = seconds0 - countDown;
+        if(seconds < 0)
+        {
+            seconds = 0;
+            Time.timeScale = 0; // pause game
+        }
         timer.text = seconds.ToString();
     }
 
     void UpdateScore()
     {
-        counter.text = "Score: " + score;
+        counter.text = "Score: " + ScoringManager.score;
     }
 
 }
