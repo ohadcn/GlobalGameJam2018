@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 m_EditorVersion: 2017.3.0f3
 =======
 m_EditorVersion: 2017.3.0f2
 >>>>>>> 30cb8c9253ed67aeab4895e18ee71d334d212e10
+=======
+m_EditorVersion: 2017.3.0b10
+>>>>>>> 1991ad16b65a62fcbc56daf837968eea21cdade3
