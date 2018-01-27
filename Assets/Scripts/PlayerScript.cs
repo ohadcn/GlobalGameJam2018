@@ -40,8 +40,10 @@ public class PlayerScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var s = other.GetComponent<Hole>();
-        if (s!=null)
-            if (s.fruit == fruit)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (s != null && s.fruit == fruit)
+        {
+            ScoringManager.score++;
+            FindObjectOfType<Restarter>().Restart();
+        }
     }
 }
