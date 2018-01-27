@@ -12,7 +12,7 @@ public class Duplicate : MonoBehaviour {
 	void Start () {
         for (int i = 0; i < times; i++)
         {
-            Instantiate(obj);
+            GameObject n = Instantiate(obj);
         }
     }
 	

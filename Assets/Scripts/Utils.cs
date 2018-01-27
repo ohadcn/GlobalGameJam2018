@@ -5,7 +5,7 @@ using System.Text;
 
 class Utils
 {
-    public static System.Random rand = new System.Random();
+    static System.Random rand = new System.Random();
 
     public static float Rangify(double x)
     {
