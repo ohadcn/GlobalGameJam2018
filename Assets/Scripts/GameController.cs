@@ -8,22 +8,18 @@ public class GameController : MonoBehaviour
 {
 
     public TextMeshProUGUI counter;
-    public int score;
     public TextMeshProUGUI timer;
-    public int seconds;
-    int seconds0;
     public TextMeshProUGUI gameOver;
-    public int countDown;
+    public int GameDuration = 120;
+    int countDown;
     float countDown0;
     int FramePerSec = 25;
     // Use this for initialization
     void Start()
     {
         counter.text = "Score:";
-        timer.text = "120";
-        gameOver.text = " ";
-        score = 0;
-        seconds0 = 120;
+        timer.text = GameDuration.ToString();
+        gameOver.text = "";
         countDown0 = (Time.realtimeSinceStartup);
     }
     private void Update()
@@ -35,9 +31,12 @@ public class GameController : MonoBehaviour
     void UpdateTimer()
     {
         countDown = (int)(Time.realtimeSinceStartup - countDown0);
-        seconds = seconds0 - countDown;
+        int seconds = GameDuration + ScoringManager.score*10 - countDown;
         if(seconds < 0)
         {
+            Debug.Log("game over");
+            gameOver.gameObject.SetActive(true);
+            gameOver.text = "Time's up!\nYour score: " + ScoringManager.score;
             seconds = 0;
             Time.timeScale = 0; // pause game
         }
