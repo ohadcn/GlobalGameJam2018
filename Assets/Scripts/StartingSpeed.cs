@@ -13,7 +13,7 @@ public class StartingSpeed : MonoBehaviour {
     public Vector3 MaxRandomPos = Vector3.one * 4;
 
     // Use this for initialization
-    void Start () {
+    public void Start () {
         if (UseRandomSpeed)
             Speed = new Vector3(Rangify(MaxRandomSpeed.x),
                 Rangify(MaxRandomSpeed.y),
@@ -28,7 +28,7 @@ public class StartingSpeed : MonoBehaviour {
             Speed = new Vector3(Rangify(MaxRandomPos.x),
                 Rangify(MaxRandomPos.y),
                 Rangify(MaxRandomPos.z));
-        transform.position += Speed;
+        transform.position = Speed;
     }
 
     // Update is called once per frame

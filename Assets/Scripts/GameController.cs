@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class GameController : MonoBehaviour {
+public class GameController : MonoBehaviour
+{
 
     public TextMeshProUGUI counter;
     public int score;
@@ -15,14 +16,15 @@ public class GameController : MonoBehaviour {
     public int countDown;
     float countDown0;
     int FramePerSec = 25;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         counter.text = "Score:";
-        timer.text = "120";       
+        timer.text = "120";
         gameOver.text = " ";
         score = 0;
         seconds0 = 120;
-        countDown0 = (Time.realtimeSinceStartup);       
+        countDown0 = (Time.realtimeSinceStartup);
     }
     private void Update()
     {
@@ -31,15 +33,15 @@ public class GameController : MonoBehaviour {
 
     }
     void UpdateTimer()
-         {
+    {
         countDown = (int)(Time.realtimeSinceStartup - countDown0);
         seconds = seconds0 - countDown;
         timer.text = seconds.ToString();
-         }
+    }
 
     void UpdateScore()
-         {
-            counter.text = "Score: " + score;
-         }
+    {
+        counter.text = "Score: " + score;
+    }
 
 }

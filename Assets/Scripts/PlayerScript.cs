@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public class PlayerScript : MonoBehaviour
 {
     public Fruit fruit;
@@ -32,6 +34,16 @@ public class PlayerScript : MonoBehaviour
                 //GetComponent<Animator>().Play(names[prev] + "To" + names[(int)fruit]);
                 GetComponent<Animator>().SetTrigger(names[(int)s.fruit] + "HitsMy" + names[prev]);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var s = other.GetComponent<Hole>();
+        if (s != null && s.fruit == fruit)
+        {
+            ScoringManager.score++;
+            FindObjectOfType<Restarter>().Restart();
         }
     }
 }
