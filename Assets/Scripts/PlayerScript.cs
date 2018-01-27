@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
     public Fruit fruit;
+
+    public AudioClip[] crashsounds;
+    public AudioClip endsound;
+    public AudioClip[] themes;
+
+    private AudioSource source;
+
     public string[] names = new string[] { "Banana",
         //"Strawberry",
         "Straw",
@@ -14,6 +21,13 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         fruit = Fruit.BANANA;
+
+    }
+    void Awake()
+    {
+
+        source = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -27,13 +41,17 @@ public class PlayerScript : MonoBehaviour
         HittersScript s = collision.collider.GetComponent<HittersScript>();
         if (s != null)
         {
+            
             if (fruit != s.fruit)
             {
                 int prev = (int)fruit;
                 fruit = (Fruit)(3 - this.fruit - s.fruit);
                 //GetComponent<Animator>().Play(names[prev] + "To" + names[(int)fruit]);
                 GetComponent<Animator>().SetTrigger(names[(int)s.fruit] + "HitsMy" + names[prev]);
+                source.PlayOneShot(crashsounds[0], 1F);
             }
+            else
+                source.PlayOneShot(crashsounds[1], 1F);
         }
     }
 
@@ -43,6 +61,7 @@ public class PlayerScript : MonoBehaviour
         if (s != null && s.fruit == fruit)
         {
             ScoringManager.score++;
+            source.PlayOneShot(endsound,1F);
             FindObjectOfType<Restarter>().Restart();
         }
     }
