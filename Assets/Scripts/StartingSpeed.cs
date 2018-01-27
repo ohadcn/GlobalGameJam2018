@@ -13,11 +13,15 @@ public class StartingSpeed : MonoBehaviour {
     public Vector3 MaxRandomPos = Vector3.one * 4;
 
     // Use this for initialization
-    public void Start () {
+    public void Start() {
         if (UseRandomSpeed)
             Speed = new Vector3(Rangify(MaxRandomSpeed.x),
                 Rangify(MaxRandomSpeed.y),
                 Rangify(MaxRandomSpeed.z));
+        if (Speed.magnitude < 0.8) { 
+            Speed /= Speed.magnitude;
+            Speed *= 0.8F;
+            }
         Rigidbody rigidbody = GetComponent<Rigidbody>();
         if (rigidbody != null)
             rigidbody.velocity = Speed;
