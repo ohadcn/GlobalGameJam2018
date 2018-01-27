@@ -5,9 +5,9 @@ using UnityEngine;
 public class ScoringManager : MonoBehaviour {
 
     public static int score = 0;
-
-	// Use this for initialization
-	void Start () {
+    public GUIStyle style;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -20,12 +20,8 @@ public class ScoringManager : MonoBehaviour {
     {
         int w = Screen.width, h = Screen.height;
 
-        GUIStyle style = new GUIStyle();
-
-        Rect rect = new Rect(0, 0, w, h * 2 / 100);
-        style.alignment = TextAnchor.UpperLeft;
-        style.fontSize = h * 2 / 100;
-        style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
+        Rect rect = new Rect(0, 0, w, h * 2 / 30);
+        style.fontSize = (int)rect.height;
         string text = "Score: " + score;
         GUI.Label(rect, text, style);
 
