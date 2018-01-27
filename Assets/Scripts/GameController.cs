@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     int countDown;
     float countDown0;
     int FramePerSec = 25;
+    public static int seconds;
     // Use this for initialization
     void Start()
     {
@@ -31,7 +32,7 @@ public class GameController : MonoBehaviour
     void UpdateTimer()
     {
         countDown = (int)(Time.realtimeSinceStartup - countDown0);
-        int seconds = GameDuration + ScoringManager.score*10 - countDown;
+        seconds = GameDuration + ScoringManager.score*10 - countDown;
         if(seconds < 0)
         {
             Debug.Log("game over");

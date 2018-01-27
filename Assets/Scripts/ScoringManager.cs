@@ -22,7 +22,7 @@ public class ScoringManager : MonoBehaviour {
 
         Rect rect = new Rect(0, 0, w, h * 2 / 30);
         style.fontSize = (int)rect.height;
-        string text = "Score: " + score;
+        string text = GameController.seconds.ToString() + "\tScore: " + score;
         GUI.Label(rect, text, style);
 
     }
