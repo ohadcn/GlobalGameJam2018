@@ -41,15 +41,17 @@ public class PlayerScript : MonoBehaviour
         HittersScript s = collision.collider.GetComponent<HittersScript>();
         if (s != null)
         {
-            source.PlayOneShot(crashsounds[Utils.rand.Next() % 2], 1F);
+            
             if (fruit != s.fruit)
             {
                 int prev = (int)fruit;
                 fruit = (Fruit)(3 - this.fruit - s.fruit);
                 //GetComponent<Animator>().Play(names[prev] + "To" + names[(int)fruit]);
                 GetComponent<Animator>().SetTrigger(names[(int)s.fruit] + "HitsMy" + names[prev]);
-                
+                source.PlayOneShot(crashsounds[0], 1F);
             }
+            else
+                source.PlayOneShot(crashsounds[1], 1F);
         }
     }
 
