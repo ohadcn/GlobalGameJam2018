@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
     public Fruit fruit;
+    public AnimationClip HoleClip;
 
     public AudioClip[] crashsounds;
     public AudioClip endsound;
@@ -60,6 +61,9 @@ public class PlayerScript : MonoBehaviour
         var s = other.GetComponent<Hole>();
         if (s != null && s.fruit == fruit)
         {
+            Animator a = s.GetComponent<Animator>();
+            if (a != null)
+                a.Play(HoleClip.name);
             ScoringManager.score++;
             source.PlayOneShot(endsound,1F);
             FindObjectOfType<Restarter>().Restart();
